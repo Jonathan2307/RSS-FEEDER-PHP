@@ -1,0 +1,5 @@
+RewriteEngine on
+# Menu principal à reecrire
+RewriteRule 
+#Erreur
+RewriteRule 404.htm(.*)$ ?p=404 [L,E]

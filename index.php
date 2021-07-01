@@ -5,17 +5,20 @@ $xml2 = simplexml_load_file('https://www.lemonde.fr/economie/rss_full.xml');
 $xml3 = simplexml_load_file('https://www.lemonde.fr/sport/rss_full.xml');
 $xml4 = simplexml_load_file('https://www.lemonde.fr/cultures-web/rss_full.xml');
 
-
 function getRssFlow($xml)
 {
     foreach ($xml->channel->item as $article) {
         echo $article->title . '<br>';
         echo $article->description . '<br>';
+        echo $article->pubDate . '<br>';
         echo $article->link . '<br>';
         echo $article->children('media', true)->content->attributes() . '<br>';
         echo $article->children('media', true)->content->description . '<br>';
     }
 };
+
+getRssFlow($xml);
+
 
 function getRssXtimes($xml)
 {
